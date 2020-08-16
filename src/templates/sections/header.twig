@@ -1,0 +1,11 @@
+{% from 'templates/macro/_elements/_menu.twig' import menu as menu %}
+<header class="page-header">
+    <div class="page-header__logo">
+        <img src="{{ path('@images/logo.png') }}" alt="logo" class="logo logo_header">
+    </div>
+    <div class="page-header__menu">
+        {% set items = ['home', 'service', 'about us', 'pricing table', 'how it work', 'happy clients', 'contacts'] %}
+        {{ menu(items, 0) }}
+    </div>
+</header>
+

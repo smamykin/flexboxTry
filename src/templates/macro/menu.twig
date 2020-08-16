@@ -1,0 +1,7 @@
+{% macro menu(items, activeIndex) %}
+    <div class="menu">
+        {% for item in items %}
+            <a href="{{ item.link }}" class="menu__item" title="{{ item.title }}">{{ item.title }}</a>
+        {% endfor %}
+    </div>
+{% endmacro %}
