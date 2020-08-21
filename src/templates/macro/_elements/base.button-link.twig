@@ -1,0 +1,4 @@
+{% if title is null %}
+    {% set title = value %}
+{% endif %}
+<a href="{{ link|e('html_attr') }}" class="{{ html_classes('btn', classes) }}" {{ attrs|e('html_attr') }}>{{ value }}</a>
