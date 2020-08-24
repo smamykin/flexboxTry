@@ -1,0 +1,9 @@
+$family-text: 'Open sans', sans-serif;
+$family-btn: Lato, sans-serif;
+$size-btn: 14px;
+
+@mixin font_btn {
+  font-family: $family-btn;
+  font-size: $size-btn;
+}
+

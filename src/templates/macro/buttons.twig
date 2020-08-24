@@ -1,5 +1,5 @@
-{% macro header_menu(value, link, classes = {}, title=null, attrs = '') %}
-    {% set classes = html_classes(classes, 'btn_header-menu') %}
+{% macro header_menu_btn(value, link, isActive = true, classes = {}, title=null, attrs = '') %}
+    {% set classes = html_classes(classes, 'btn_header-menu', {'active': isActive}) %}
     {% include 'templates/macro/_elements/base.button-link.twig' %}
 {% endmacro %}
 

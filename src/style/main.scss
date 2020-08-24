@@ -1,7 +1,32 @@
 @import '~normalize-scss/fork-versions/default/normalize';
-@use 'fonts';
-
+@import 'fonts/lato';
+@import 'fonts/monserrat';
+@import 'fonts/openSans';
+@import 'vars/font';
+@import "vars/color";
 .btn {
-  font-family: Lato, sans-serif;
 
+  display: inline-block;
+
+  box-sizing: border-box;
+  padding: 9px 19px;
+  border-radius: 2px;
+
+  @include font_btn;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: #868686;
+
+  &.active, &:hover {
+    background-color: $bg-warn;
+    color:$color-opposite;
+  }
+}
+
+.menu-item {
+  margin-left: -5px;
+  &:first-of-type {
+    margin-left: 0;
+  }
 }
