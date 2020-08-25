@@ -1,29 +1,15 @@
-{#{% from 'templates/macro/_elements/_menu.twig' import menu as menu %}#}
-{#<header class="page-header">#}
-{#    <div class="page-header__logo">#}
-{#        <img src="{{ path('@images/logo.png') }}" alt="logo" class="logo logo_header">#}
-{#    </div>#}
-{#    <div class="page-header__menu">#}
-{#        {% set items = ['home', 'service', 'about us', 'pricing table', 'how it work', 'happy clients', 'contacts'] %}#}
-{#        {{ menu(items, 0) }}#}
-{#    </div>#}
-{#</header>#}
 {% from 'templates/macro/menu.twig' import menu %}
 {% from 'templates/macro/logo.twig' import logo_header %}
+<header class="page-header">
+    <div class="page-header__container">
+        <div class="page-header__logo">
+            {{ logo_header() }}
+        </div>
+        <div class="page-header__menu">
+            {{ menu(menuLinks|default([])) }}
+        </div>
+    </div>
+</header>
 
-{% set menuLinks = [
-    'Home',
-    'Service',
-    'About us',
-    'Pricing Table',
-    'How it work',
-    'Happy Clients',
-    'Contact Us'
-] %}
-{% set items = [] %}
-{% for item in menuLinks %}
-    {% set items = items|merge([{title: item, link: '#'}]) %}
-{% endfor %}
-{{ menu(items) }}
-{{ logo_header() }}
+
 
