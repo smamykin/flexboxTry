@@ -8,7 +8,8 @@
 {#        {{ menu(items, 0) }}#}
 {#    </div>#}
 {#</header>#}
-{% from 'templates/macro/menu.twig' import menu%}
+{% from 'templates/macro/menu.twig' import menu %}
+{% from 'templates/macro/logo.twig' import logo_header %}
 
 {% set menuLinks = [
     'Home',
@@ -24,4 +25,5 @@
     {% set items = items|merge([{title: item, link: '#'}]) %}
 {% endfor %}
 {{ menu(items) }}
+{{ logo_header() }}
 
