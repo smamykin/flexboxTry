@@ -1,21 +1,47 @@
 @import './../vars/font';
 @import "./../vars/color";
 .btn {
+  @include font_btn;
 
   display: inline-block;
 
   box-sizing: border-box;
-  padding: 9px 19px;
   border-radius: 2px;
+  padding: 15px 32px;
+  border: transparent solid 1px;
 
-  @include font_btn;
+  color:$color-opposite;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
 
-  color: #868686;
+  background-color: $bg-warn;
+  cursor: pointer;
 
   &.active, &:hover {
-    background-color: $bg-warn;
-    color:$color-opposite;
+    color:$color-link;
+    background-color: $bg-primary;
+    border: solid $bg-warn 1px;
+  }
+
+  &_header-menu {
+    padding: 9px 19px;
+    color: $color-link;
+    background-color: $bg-primary;
+    &.active, &:hover {
+      background-color: $bg-warn;
+      color:$color-opposite;
+    }
+  }
+  &_parent-width {
+    width:100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &_norrower {
+    padding: 12px 21px;
+  }
+  &_outline {
+    border: solid $bg-warn-dark 1px;
   }
 }
