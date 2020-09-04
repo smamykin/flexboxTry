@@ -6,10 +6,12 @@ $fa-font-path:        "../fonts/webfonts";
 
 @import 'fonts/lato';
 @import 'fonts/monserrat';
+@import 'fonts/gothamBlack';
 @import 'fonts/openSans';
 @import "parts/menu";
 @import "parts/btns";
 @import "parts/form";
+@import "parts/headers";
 @import "vars/_font";
 @mixin container() {
   width: 1180px;

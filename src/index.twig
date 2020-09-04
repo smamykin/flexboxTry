@@ -36,6 +36,20 @@
             button('Request a quote', {type:'submit', classes: 'btn_request-quote'}),
         ]) }}
     </div>
+
+    <h2 >headers</h2>
+    <div style="background-color: royalblue;">
+        {% from 'templates/macro/headers.twig' import header_h1, header_h2 %}
+        {{ header_h1({
+            text:'Boost up your Local business',
+            subtext: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum typesetting',
+            alt:true,
+        }) }}
+    </div>
+    {{ header_h2({
+        text:'Our Services',
+        subtext: 'Lorem Ipsum is simply dummy Business industry.',
+    }) }}
     {#    {% include 'templates/sections/look_at_me_first.twig' %}#}
 {#    {% include 'templates/sections/services.twig' %}#}
 {#    {% include 'templates/sections/about.twig' %}#}

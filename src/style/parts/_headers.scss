@@ -1,0 +1,38 @@
+.section-header {
+  &__txt {
+    text-align:center;
+  }
+  &__subtext {
+    display: block;
+  }
+}
+
+.h1 {
+  font-size: 35px;
+  small {
+    font-size: 16px;
+  }
+}
+
+.h2 {
+  font-size: 30px;
+  small {
+    font-size: 16px;
+  }
+}
+
+.h1, .h2 {
+  color: $font-headers;
+  font-family: "Gotham Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.88px;
+  small {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  @at-root .h1_alt, .h2_alt {
+    color: $color-opposite;
+  }
+}
