@@ -124,3 +124,66 @@
     padding-top:16px;
   }
 }
+.card-review {
+  background-color: $bg-primary;
+  box-sizing: border-box;
+  width: 567px;
+  height: 241px;
+  margin-bottom: 20px;
+  padding: 43px 42px 0 30px;
+
+  &__image {
+    background-position: 50% 50%;
+    background-size: 100%;
+    border-radius: 50%;
+    width: 121px;
+    height: 121px;
+    float:left;
+    margin: 0 30px 40px 0;
+  }
+  &__quote {
+    color: $font;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    position: relative;
+    margin-left: 151px;
+
+    @mixin quote {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-image: url("../images/quote.png");
+      background-position: left;
+      background-repeat: no-repeat;
+    }
+    &::before {
+      @include quote();
+      left: -15px;
+    }
+    &::after {
+      @include quote();
+      transform:rotateY(180deg);
+      bottom:0;
+      width: 20px;
+    }
+  }
+  &__author {
+
+    color: #99a9ae;
+    font-family: Lato sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding-top:20px;
+
+    &-name {
+      color: #f6772c;
+    }
+    &-title {
+      color: #394b50;
+    }
+  }
+}

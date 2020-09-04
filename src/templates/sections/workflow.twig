@@ -1,0 +1,36 @@
+{% from 'templates/macro/headers.twig' import header_h2 %}
+{% from 'templates/macro/buttons.twig' import button %}
+<div class="workflow">
+    <div class="workflow__title">
+            {{ header_h2({
+                text: 'How it works',
+                subtext: 'Lorem Ipsum is simply dummy Business industry'
+            }) }}
+    </div>
+
+    {% set items = [
+        'headphones', 'unlock-alt', 'cloud-upload', 'thumbs-o-up',
+    ]%}
+    <div class="workflow__arrows">
+        {% for i in 2..items|length %}
+            <div class="arrow"></div>
+        {% endfor %}
+    </div>
+    <div class="workflow__cards">
+        {% for icon in items %}
+            <div class="step">
+                <div class="step__icon"><i class="fa fa-{{ icon }}" aria-hidden="true"></i></div>
+                <div class="step__title">Step {{ loop.index }}</div>
+                <div class="step__desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting ind ustry. Lorem Ipsum has been
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="workflow__btn">
+        {{ button('get started now',{
+            narrower: true,
+        }) }}
+    </div>
+</div>

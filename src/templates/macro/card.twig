@@ -18,5 +18,16 @@
     {% set theme = 'blueish' %}
     {% include 'templates/macro/_elements/base.price-card.twig' %}
 {% endmacro %}
+{% macro card_review(item) %}
+    <div class="card-review">
+        <div class="card-review__image"
+             style="background-image: url('{{ item.photo }}');"></div>
+        <div class="card-review__quote">{{ item.quote }}</div>
+        <div class="card-review__author">
+            <span class="card-review__author-name">{{ item.name }}</span>,
+            <span class="card-review__author-title">{{ item.title }}</span>
+        </div>
+    </div>
+{% endmacro %}
 
 

@@ -11,6 +11,7 @@ $fa-font-path: "../fonts";
 @import "parts/btns";
 @import "parts/form";
 @import "parts/card";
+@import "parts/steps";
 @import "parts/headers";
 @import "vars/_font";
 @mixin container() {
@@ -137,5 +138,52 @@ $fa-font-path: "../fonts";
     justify-content: center;
     align-items: center;
     padding: 22px 0 0;
+  }
+}
+.workflow {
+  @include container();
+  width: 1205px;
+  height: 732px;
+  padding-top: 123px;
+  position: relative;
+  &__cards {
+    padding: 46px 0 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__btn {
+    text-align: center;
+    margin-top: 90px;
+  }
+  &__arrows {
+    display: flex;
+    justify-content: space-around;
+    width: 913px;
+    margin: 0 auto;
+  }
+}
+.arrow {
+  background-image: url("../images/arraw_top.svg");
+  background-size: 100% 100%;
+  width: 128px;
+  height: 33px;
+  position: relative;
+  top: 52px;
+  &:nth-of-type(even) {
+    transform: rotate(180deg);
+    top: 148px;
+  }
+}
+
+.review {
+  background-color: $bg-warn-lighter;
+  padding: 107px 0 0;
+  height: 798px;
+  &__cards {
+    padding: 35px 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    @include container;
   }
 }

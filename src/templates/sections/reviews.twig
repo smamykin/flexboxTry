@@ -1,0 +1,50 @@
+{% from 'templates/macro/headers.twig' import header_h2 %}
+{% from 'templates/macro/card.twig' import card_review %}
+<div class="review">
+    <div class="review__title">
+        {{ header_h2({
+            text: 'How it works',
+            subtext: 'Lorem Ipsum is simply dummy Business industry',
+            alt: true,
+        }) }}
+    </div>
+    {% set items = [
+        {
+            photo:path('@images/person.png'),
+            quote: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+             been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley
+             of type and scrambled it to make.',
+            name: 'Darwin Michle',
+            title: 'Project manager',
+        },
+        {
+            photo:path('@images/person-1.png'),
+            quote: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+             has been the industrystandard dummy text ever since the 1500s, wen an unknown printer took
+             a galley of type and scrambled to make a type specimen book.',
+            name: 'Madam Elisabath',
+            title: 'Creative Director',
+        },
+        {
+            photo:path('@images/person-3.png'),
+            quote: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+             been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley
+             of type and scrambled it to make.',
+            name: 'Clips arter',
+            title: 'Lipsum directer',
+        },
+        {
+            photo:path('@images/person-2.png'),
+            quote: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+             has been the industrystandard dummy text ever since the 1500s, wen an unknown printer took
+             a galley of type and scrambled to make a type specimen book.',
+            name: 'zam cristafr',
+            title: 'manager',
+        },
+    ] %}
+    <div class="review__cards">
+        {% for item in items %}
+            {{ card_review(item) }}
+        {% endfor %}
+    </div>
+</div>

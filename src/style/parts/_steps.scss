@@ -1,0 +1,22 @@
+.step {
+  width: 220px;
+  text-align: center;
+  &__icon {
+    font-size: 72px;
+  }
+  &__title {
+    color: #394b50;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    margin: 82px 0 16px;
+  }
+  &__desc {
+    color: $font;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+  }
+}
