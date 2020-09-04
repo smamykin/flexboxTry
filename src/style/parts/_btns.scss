@@ -44,4 +44,9 @@
   &_outline {
     border: solid $bg-warn-dark 1px;
   }
+  &_request-quote {
+    width: 212px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

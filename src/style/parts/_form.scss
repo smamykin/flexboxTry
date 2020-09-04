@@ -1,0 +1,52 @@
+ body {
+   background-color: royalblue;
+   padding-left: 30px; //todo
+ }
+
+.form-group {
+  position: relative;
+
+  font-family: Lato serif;
+  color: $font-label;
+
+  &__control {
+    font-family: Lato serif;
+    min-width: 238px;
+    height: 42px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding-left: 40px;
+  }
+  &__label {
+    font-size: $size-normal;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    &-placeholder_hidden {
+      display:none;
+    }
+
+    $controlIcons: person $fa-var-user-alt, phone $fa-var-phone-alt, envelop $fa-var-envelope;
+    @each $name, $icon in $controlIcons {
+      &_icon_#{$name}::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($icon);
+        margin-right: 10px;
+        color: $font-label-icon;
+      }
+    }
+  }
+}
+
+.form_inline {
+  .form {
+    &__field-group {
+      display: inline-block;
+      margin-left:5px;
+      &:first-of-type {
+        margin-left:0;
+      }
+    }
+  }
+}

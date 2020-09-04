@@ -18,11 +18,24 @@
     {% endfor %}
     {% include 'templates/sections/header.twig' with {menuLinks: items}%}
     {% from 'templates/macro/buttons.twig' import button %}
+    <h2>buttons</h2>
     {{ button('Request a quote', {type:'submit'}) }}
     {{ button('Read more', {type:'link', outline: true}) }}
     {{ button('Get started', {type:'link', norrower: true}) }}
     {{ button('Get started now', {type:'link'}) }}
     {{ button('Subscribe now', {type:'submit'}) }}
+
+    <h2>form</h2>
+    <div>
+        {% from 'templates/macro/form-control.twig' import input %}
+        {% from 'templates/macro/form.twig' import inline_form %}
+        {{ inline_form([
+            input({ icon: 'person', placeholder: '', label: 'Full Name', }),
+            input({ icon: 'email', label: 'Email Address', type: 'email', }),
+            input({ icon: 'phone', label: 'Phone Number', type: 'phone', }),
+            button('Request a quote', {type:'submit', classes: 'btn_request-quote'}),
+        ]) }}
+    </div>
     {#    {% include 'templates/sections/look_at_me_first.twig' %}#}
 {#    {% include 'templates/sections/services.twig' %}#}
 {#    {% include 'templates/sections/about.twig' %}#}

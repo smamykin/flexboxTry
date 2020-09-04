@@ -1,9 +1,16 @@
 @import '~normalize-scss/fork-versions/default/normalize';
+$fa-font-path:        "../fonts/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
 @import 'fonts/lato';
 @import 'fonts/monserrat';
 @import 'fonts/openSans';
 @import "parts/menu";
 @import "parts/btns";
+@import "parts/form";
+@import "vars/_font";
 @mixin container() {
   width: 1180px;
   margin: 0 auto;

@@ -1,0 +1,9 @@
+{% macro inline_form(fieldGroups) %}
+    <form class="form form_inline">
+        {% for group in fieldGroups %}
+            <div class="form__field-group">
+                {{ group|raw }}
+            </div>
+        {% endfor %}
+    </form>
+{% endmacro %}
