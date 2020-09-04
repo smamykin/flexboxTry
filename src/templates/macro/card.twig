@@ -11,3 +11,12 @@
         <div class="service-card__text">{{ text }}</div>
     </div>
 {% endmacro %}
+{% macro price_card(name, price, features) %}
+    {% include 'templates/macro/_elements/base.price-card.twig' %}
+{% endmacro %}
+{% macro price_card_scaled_up(name, price, features) %}
+    {% set theme = 'blueish' %}
+    {% include 'templates/macro/_elements/base.price-card.twig' %}
+{% endmacro %}
+
+

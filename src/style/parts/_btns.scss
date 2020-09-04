@@ -38,11 +38,16 @@
     padding-left: 0;
     padding-right: 0;
   }
-  &_norrower {
+  &_narrower {
     padding: 12px 21px;
   }
   &_outline {
     border: solid $bg-warn-dark 1px;
+    &:hover, &:focus {
+      border: solid $bg-primary 1px;
+      background-color: $bg-warn;
+      color: $color-opposite;
+    }
   }
   &_request-quote {
     width: 212px;

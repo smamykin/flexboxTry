@@ -7,13 +7,13 @@
 {% macro button(value, opts) %}
     {% set opts = {
         type:'button',
-        norrower: false,
+        narrower: false,
         outline: false,
         classes: '',
     }|merge(opts) %}
 
     {% set classes = html_classes(opts.classes, {
-        'btn_norrower': opts.norrower,
+        'btn_narrower': opts.narrower,
         'btn_outline': opts.outline,
     }) %}
     {% set type = opts.type %}

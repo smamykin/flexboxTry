@@ -50,3 +50,77 @@
     text-transform: uppercase;
   }
 }
+
+.price-card {
+  position: relative;
+  box-sizing: border-box;
+  font-family: Lato, sans-serif;
+  width: 386px;
+  height: 439px;
+  border: 1px solid #ccd5df;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  color: #818b95;
+  padding: 57px 0px 0 0;
+  left: -4px;
+
+  &_scalled {
+    background-color: $bg-attention;
+    color: $color-opposite;
+    height: 501px;
+    width: 395px;
+    padding:87px 0 0;
+    .price_card {
+      color: $bg-warn;
+    }
+    .price-card__price {
+      color: $bg-warn;
+      small {
+        color: $color-opposite;
+      }
+    }
+    .price-card__features {
+      color: $color-opposite;
+      padding: 15px 33px 0;
+    }
+  }
+
+  &__name {
+    text-align:center;
+    height: 18px;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 22px;
+    text-transform: uppercase;
+  }
+  &__price {
+    color: $bg-warn;
+    font-size: 60px;
+    font-weight: 700;
+    margin-top: 26px;
+
+    /* Text style for "per month" */
+    small {
+      display: block;
+      color: #818b95;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 22px;
+      text-transform: uppercase;
+      position: relative;
+      top: -8px;
+    }
+    sup {
+      position: relative;
+      top: -0.5em;
+      font-size: 0.6em;
+    }
+  }
+  &__features {
+    padding: 15px 31px 0;
+  }
+  &__btn {
+    padding-top:16px;
+  }
+}

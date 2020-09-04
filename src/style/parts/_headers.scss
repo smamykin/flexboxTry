@@ -35,4 +35,7 @@
   @at-root .h1_alt, .h2_alt {
     color: $color-opposite;
   }
+  @at-root .h1_left, .h2_left {
+    text-align: left;
+  }
 }

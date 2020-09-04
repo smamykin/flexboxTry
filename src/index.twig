@@ -18,7 +18,9 @@
     {% endfor %}
     {% include 'templates/sections/header.twig' with {menuLinks: items}%}
     {% include 'templates/sections/look_at_me_first.twig' %}
-    {% include 'templates/sections/services.twig' with {menuLinks: items}%}
+    {% include 'templates/sections/services.twig' %}
+    {% include 'templates/sections/about.twig'%}
+    {% include 'templates/sections/prices.twig'%}
 
 
 
@@ -30,7 +32,7 @@
     {% from 'templates/macro/buttons.twig' import button %}
     {{ button('Request a quote', {type:'submit'}) }}
     {{ button('Read more', {type:'link', outline: true}) }}
-    {{ button('Get started', {type:'link', norrower: true}) }}
+    {{ button('Get started', {type:'link', narrower: true}) }}
     {{ button('Get started now', {type:'link'}) }}
     {{ button('Subscribe now', {type:'submit'}) }}
 

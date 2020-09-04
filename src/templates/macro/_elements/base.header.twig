@@ -1,10 +1,11 @@
 {% set opts = {
     'alt': false,
     subtext: '',
+    left: false
 }|merge(opts) %}
 {% spaceless %}
 <div class="section-header">
-    <{{ tag }} class="{{ html_classes(tag, 'section-header__txt', {'h1_alt': opts.alt}) }}">
+    <{{ tag }} class="{{ html_classes(tag, 'section-header__txt', {'h1_alt': opts.alt, 'h1_left': opts.left}) }}">
     {{ opts.text }}
     {% if opts.subtext %}
         <small class="section-header__subtext">{{ opts.subtext }}</small>

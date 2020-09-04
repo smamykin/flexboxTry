@@ -1,0 +1,37 @@
+{% from 'templates/macro/card.twig' import price_card, price_card_scaled_up %}
+{% from 'templates/macro/headers.twig' import header_h2 %}
+
+<div class="prices">
+    <div class="prices__title">
+        {{ header_h2({
+            text: 'Choos your price',
+            subtext: 'Lorem Ipsum is simply dummy text of the printing typesetting .',
+        }) }}
+    </div>
+    <div class="prices__cards">
+        {% set items = [
+            [
+                'Basic plan', '22', [
+                    '1 Account',
+                    '8 hour support',
+                    'Custom Cloud Services',
+                ],
+            ],[
+                'Premium plan', '42', [
+                    '2 Account',
+                    '100MB Storage',
+                    'Custom Cloud Services',
+                ],
+            ],[
+                'Gold plan', '62', [
+                    '8 Account',
+                    '24 hour support',
+                    'Custom Cloud Services',
+                ],
+            ],
+        ] %}
+        {{ price_card(items[0][0],items[0][1],items[0][2]) }}
+        {{ price_card_scaled_up(items[1][0],items[1][1],items[1][2]) }}
+        {{ price_card(items[2][0],items[2][1],items[2][2]) }}
+    </div>
+</div>

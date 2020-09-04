@@ -1,0 +1,27 @@
+{% from 'templates/macro/buttons.twig' import button %}
+{% set classes = classes|default('') %}
+{% if theme  == 'blueish'%}
+    {% set classes = html_classes(classes, 'price-card_scalled') %}
+{% endif %}
+
+<div class="price-card {{ classes|e('html_attr') }}">
+    <div class="price-card__name">{{ name }}</div>
+    <div class="price-card__price">
+        <sup>$</sup>{{ price }}<small>per month</small>
+    </div>
+    <ul class="{{ html_classes(
+        'price-card__features',
+        'list',
+        {
+            'list_features': theme is not defined,
+            'list_blueish': theme is defined and theme == 'blueish'
+        }
+    ) }}">
+        {% for listItem in features %}
+            <li class="list__item">{{ listItem }}</li>
+        {% endfor %}
+    </ul>
+    <div class="price-card__btn">
+        {{ button('get started',{narrower: true}) }}
+    </div>
+</div>

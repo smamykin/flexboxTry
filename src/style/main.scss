@@ -7,6 +7,7 @@ $fa-font-path: "../fonts";
 @import 'fonts/gothamBlack';
 @import 'fonts/openSans';
 @import "parts/menu";
+@import "parts/list";
 @import "parts/btns";
 @import "parts/form";
 @import "parts/card";
@@ -16,6 +17,14 @@ $fa-font-path: "../fonts";
   width: 1180px;
   margin: 0 auto;
 }
+@mixin clearfix() {
+  &:after {
+    content: '';
+    clear:both;
+    display: table;
+  }
+}
+
 
 .page-header {
   &__container {
@@ -55,7 +64,7 @@ $fa-font-path: "../fonts";
   }
 }
 .look-at-me {
-  background-color: #709dca;
+  background-color: $bg-attention;
   height: 585px;
   margin-bottom: 196px;
 
@@ -84,5 +93,49 @@ $fa-font-path: "../fonts";
     display: flex;
     flex-wrap: wrap;
     padding:63px 0 ;
+  }
+}
+
+.about {
+  background-color: $bg-warn-lighter;
+  &__img {
+    background-image: url("../images/desk.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 50% 100%;
+    width: 50%;
+    margin-right: 76px;
+    float:left;
+  }
+  &__text {
+    color: $color-opposite;
+    line-height: 24px;
+    letter-spacing: 0;
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    @include container();
+  }
+  &__title {
+    padding: 130px 0 0;
+    & .h2 {
+      margin-bottom: 18px;
+    }
+  }
+  &__btn {
+    padding-top: 26px;
+  }
+  @include clearfix()
+}
+
+.prices {
+  box-sizing: border-box;
+  padding: 106px 0 0;
+  background-color: #e7edf3;
+  height: 895px;
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 0 0;
   }
 }
