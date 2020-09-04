@@ -1,0 +1,13 @@
+{% macro card_service(icon, title, text) %}
+    <div class="{{ html_classes('service-card ', {
+        'service-card_clock': icon == 'clock',
+        'service-card_gear': icon == 'gear',
+        'service-card_hat': icon == 'hat',
+        'service-card_rocket': icon == 'rocket',
+        'service-card_ways': icon == 'ways',
+        'service-card_dollar': icon == 'dollar',
+    }) }}">
+        <div class="service-card__title">{{ title }}</div>
+        <div class="service-card__text">{{ text }}</div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,52 @@
+.service-card {
+  position: relative;
+  display: inline-block;
+  line-height: 22px;
+  letter-spacing: 0;
+  width: 480px;
+  padding-left: 80px;
+  margin-bottom: 73px;
+  &:nth-of-type(odd) {
+    width: 445px;
+    margin-right:94px
+  }
+  $map:
+          clock $fa-var-clock-o,
+          gear $fa-var-gear,
+          hat $fa-var-graduation-cap,
+          rocket $fa-var-rocket,
+          ways $fa-var-renren,
+          dollar $fa-var-usd,
+;
+  @each $name, $var in $map {
+    &_#{$name}::before {
+      @extend .fa;
+
+      position: absolute;
+      top: 0;
+      left:1px;
+      font-size: 52px;
+      content: $var;
+      width: 100px;
+      height: 100px;
+      @if($name == dollar) {
+        left: 15px;
+      }
+
+    }
+  }
+  &__text {
+    color: $font;
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    padding-top:10px;
+  }
+  &__title {
+    font-weight: 700;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: $font-headers;
+    text-transform: uppercase;
+  }
+}

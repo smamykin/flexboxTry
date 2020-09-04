@@ -1,0 +1,42 @@
+{% from 'templates/macro/headers.twig' import header_h2 %}
+{% from 'templates/macro/card.twig' import card_service %}
+<div class="services">
+    <div class="services__header">
+        {{ header_h2({
+            text:'Our services',
+            subtext: 'Lorem Ipsum is simply dummy Business industry.',
+        }) }}
+    </div>
+    <div class="services__cards">
+        {% set v = 'Lorem Ipsum is simply dummy text of the printing and
+        typesetting ind ustry. Lorem Ipsum has been the industry\'s standard
+        dummy text ever since the 1500s, when an unknown printer.' %}
+
+        {{ card_service('clock', 'Font-awesome icons', v) }}
+
+        {% set v = 'Many desktop publishing packages and web page editors now use
+        Lorem Ipsum as their default model text, and a search for \'lorem ipsum\'
+        will uncover many web sites still in their infancy' %}
+
+        {{ card_service('gear', 'Fully Responsive Design', v) }}
+
+        {% set v = 'Many desktop publishing packages and web page editors now use Lorem
+        Ipsum as their default model text, and a search for \'lorem ipsum\' will
+        un cover many web sites still in their infancy' %}
+
+        {{ card_service('hat', 'Working Contact form', v) }}
+
+        {% set v = 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour or randomised words which don\'t look even slightly believable.' %}
+
+        {{ card_service('rocket', 'Retina Ready icons here', v) }}
+
+        {% set v = 'Finibus Bonorum et Malorum" by Cicero are also reproduced in their
+        exact original form, accompanied by English versions from the 1914 translation by
+         H. Rackham' %}
+        {{ card_service('ways', 'Friendly Code', v) }}
+
+        {% set v = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+         industry\'s standard dummy text ever since the 1500s, when an unknown printer.' %}
+        {{ card_service('dollar', 'Flat trendy landing page Design', v) }}
+    </div>
+</div>

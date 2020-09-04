@@ -1,8 +1,6 @@
 @import '~normalize-scss/fork-versions/default/normalize';
-$fa-font-path:        "../fonts/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
+$fa-font-path: "../fonts";
+@import "~font-awesome/scss/font-awesome";
 
 @import 'fonts/lato';
 @import 'fonts/monserrat';
@@ -11,6 +9,7 @@ $fa-font-path:        "../fonts/webfonts";
 @import "parts/menu";
 @import "parts/btns";
 @import "parts/form";
+@import "parts/card";
 @import "parts/headers";
 @import "vars/_font";
 @mixin container() {
@@ -26,17 +25,16 @@ $fa-font-path:        "../fonts/webfonts";
     justify-content: space-between;
   }
   &__logo {
-    padding: 22px 0 23px;
+    padding: 22px 0 20px;
   }
   &__menu {
-    padding: 30px 0 29px;
+    padding: 30px 0 28px;
   }
 }
 .carousel-container {
   width: 647px;
   height: 343px;
   margin: 0 auto;
-
 }
 .owl-dots .owl-dot {
   &.owl-dot_outline span {
@@ -54,5 +52,37 @@ $fa-font-path:        "../fonts/webfonts";
   &.owl-dot_lightblue:hover span {
     background-color: transparent;
     border: 2px solid #1ca8dd
+  }
+}
+.look-at-me {
+  background-color: #709dca;
+  height: 585px;
+  margin-bottom: 196px;
+
+  &__header {
+    padding: 76px 0 0;
+  }
+
+  &__form {
+    position:relative;
+    padding-top: 13px;
+    text-align: center;
+    left: -7px;
+  }
+
+  &__carousel {
+    position:relative;
+    padding-top: 64px;
+    left:-5px;
+  }
+
+}
+
+.services {
+  @include container();
+  &__cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding:63px 0 ;
   }
 }

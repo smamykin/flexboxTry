@@ -17,49 +17,24 @@
         {% set items = items|merge([{title: item, link: '#'}]) %}
     {% endfor %}
     {% include 'templates/sections/header.twig' with {menuLinks: items}%}
-    {% from 'templates/macro/buttons.twig' import button %}
+    {% include 'templates/sections/look_at_me_first.twig' %}
+    {% include 'templates/sections/services.twig' with {menuLinks: items}%}
+
+
+
+
+
+
+
     <h2>buttons</h2>
+    {% from 'templates/macro/buttons.twig' import button %}
     {{ button('Request a quote', {type:'submit'}) }}
     {{ button('Read more', {type:'link', outline: true}) }}
     {{ button('Get started', {type:'link', norrower: true}) }}
     {{ button('Get started now', {type:'link'}) }}
     {{ button('Subscribe now', {type:'submit'}) }}
 
-    <h2>form</h2>
-    <div>
-        {% from 'templates/macro/form-control.twig' import input %}
-        {% from 'templates/macro/form.twig' import inline_form %}
-        {{ inline_form([
-            input({ icon: 'person', placeholder: '', label: 'Full Name', }),
-            input({ icon: 'email', label: 'Email Address', type: 'email', }),
-            input({ icon: 'phone', label: 'Phone Number', type: 'phone', }),
-            button('Request a quote', {type:'submit', classes: 'btn_request-quote'}),
-        ]) }}
-    </div>
-
-    <h2 >headers</h2>
-    <div style="background-color: royalblue;">
-        {% from 'templates/macro/headers.twig' import header_h1, header_h2 %}
-        {{ header_h1({
-            text:'Boost up your Local business',
-            subtext: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum typesetting',
-            alt:true,
-        }) }}
-    </div>
-    {{ header_h2({
-        text:'Our Services',
-        subtext: 'Lorem Ipsum is simply dummy Business industry.',
-    }) }}
-
-    <div class="carousel-container">
-        <div class="owl-carousel owl-theme">
-            {% for i in 1..3 %}
-                <img src="{{ path('@images/laptop_with_screen.png') }}" alt="">
-            {% endfor %}
-        </div>
-    </div>
-
-    {#    {% include 'templates/sections/look_at_me_first.twig' %}#}
+{#    {% include 'templates/sections/look_at_me_first.twig' %}#}
 {#    {% include 'templates/sections/services.twig' %}#}
 {#    {% include 'templates/sections/about.twig' %}#}
 {#    {% include 'templates/sections/prices.twig' %}#}

@@ -1,7 +1,3 @@
- body {
-   padding-left: 30px; //todo
- }
-
 .form-group {
   position: relative;
 
@@ -25,12 +21,11 @@
       display:none;
     }
 
-    $controlIcons: person $fa-var-user-alt, phone $fa-var-phone-alt, envelop $fa-var-envelope;
+    $controlIcons: person $fa-var-user, phone $fa-var-phone, envelop $fa-var-envelope;
     @each $name, $icon in $controlIcons {
       &_icon_#{$name}::before {
-        @extend %fa-icon;
-        @extend .fas;
-        content: fa-content($icon);
+        @extend .fa;
+        content: $icon;
         margin-right: 10px;
         color: $font-label-icon;
       }
