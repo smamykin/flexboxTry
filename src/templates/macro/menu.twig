@@ -1,7 +1,9 @@
-{% macro menu(items, activeIndex) %}
+{# _menu.scss #}
+{% macro menu(items, activeIndex = 0) %}
+    {% from 'templates/macro/buttons.twig' import header_menu_btn as button %}
     <div class="menu">
         {% for item in items %}
-            <a href="{{ item.link }}" class="menu__item" title="{{ item.title }}">{{ item.title }}</a>
+            {{ button(item.title, item.link, loop.index0 == activeIndex , 'menu-item') }}
         {% endfor %}
     </div>
 {% endmacro %}

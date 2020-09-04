@@ -1,0 +1,3 @@
+{% macro logo_header() %}
+    <img src="{{ path('@images/logo.png') }}" alt="{{ alt|default('logo') }}" class="{{ html_classes('logo logo_header',classes) }}">
+{% endmacro %}

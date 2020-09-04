@@ -1,0 +1,23 @@
+{% macro input(opts) %}
+    {%- spaceless %}
+    {% set opts = {
+        icon: 'person',
+        placeholder: '',
+        type: 'text',
+        id: random() ~ random() ~ date('U'),
+        label: '',
+    }|merge(opts) %}
+    <div class="form-group form-group_placeholder">
+        <label for="{{ opts.id|e('html_attr') }}"
+               class="{{ html_classes(
+                   'form-group__label',
+                   {
+                       'form-group__label_icon_person': opts.icon == 'person',
+                       'form-group__label_icon_envelop': opts.icon == 'email',
+                       'form-group__label_icon_phone': opts.icon == 'phone',
+                   }
+               )}}">{{ icon }}<span class="form-group__label-placeholder">{{ opts.label }}</span></label>
+        <input class="form-group__control" name="{{ opts.name|e('html_attr') }}" id="{{ opts.id|e('html_attr') }}" type="{{ opts.text|e('html_attr') }}">
+    </div>
+    {% endspaceless -%}
+{% endmacro %}

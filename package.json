@@ -3,9 +3,11 @@
   "version": "2.0.0",
   "description": "This is a homework that I make up for myself.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0"
+  },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.2",
