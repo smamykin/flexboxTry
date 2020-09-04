@@ -1,6 +1,49 @@
-.menu-item {
-  margin-left: -5px;
-  &:first-of-type {
-    margin-left: 0;
+.menu {
+  &_footer {
+    text-align:center;
+    font-family: Lato, sans-serif;
+    .menu-item {
+      background-color: transparent;
+      font-size: 13px;
+      color: #394b50;
+      padding: 15px 17px;
+      position: relative;
+      left: -4px;
+    }
+  }
+}
+.menu {
+  .menu-item {
+    margin-left: -5px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+.soc-menu {
+  .menu-item {
+    color: $bg-attention;
+    margin-right: 10px;
+    &.active, &:hover {
+      color: $bg-warn-lighter;
+    }
+
+    $items:
+          'twitter' $fa-var-twitter,
+          'facebook' $fa-var-facebook-f,
+          'g-plus' $fa-var-google-plus,
+          'in' $fa-var-linkedin;
+    @each $name, $var in $items {
+      &_#{$name}::before {
+        @extend .fa;
+        content: $var;
+        /* Style for "" */
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.99px;
+      }
+    }
   }
 }

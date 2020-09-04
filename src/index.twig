@@ -23,27 +23,7 @@
     {% include 'templates/sections/prices.twig' %}
     {% include 'templates/sections/workflow.twig' %}
     {% include 'templates/sections/reviews.twig' %}
-
-
-
-
-
-
-
-    <h2>buttons</h2>
-    {% from 'templates/macro/buttons.twig' import button %}
-    {{ button('Request a quote', {type:'submit'}) }}
-    {{ button('Read more', {type:'link', outline: true}) }}
-    {{ button('Get started', {type:'link', narrower: true}) }}
-    {{ button('Get started now', {type:'link'}) }}
-    {{ button('Subscribe now', {type:'submit'}) }}
-
-{#    {% include 'templates/sections/look_at_me_first.twig' %}#}
-{#    {% include 'templates/sections/services.twig' %}#}
-{#    {% include 'templates/sections/about.twig' %}#}
-{#    {% include 'templates/sections/prices.twig' %}#}
-{#    {% include 'templates/sections/workflow.twig' %}#}
-{#    {% include 'templates/sections/reviews.twig' %}#}
-{#    {% include 'templates/sections/newsletter.twig' %}#}
-{#    {% include 'templates/sections/footer.twig' %}#}
+    {% include 'templates/sections/newsletter.twig' %}
+    <div class="divider"></div>
+    {% include 'templates/sections/footer.twig' with {menuLinks: items}%}
 {% endblock %}

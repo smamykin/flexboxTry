@@ -1,0 +1,26 @@
+{% from 'templates/macro/menu.twig' import menu_footer %}
+
+<div class="footer">
+    <div class="footer__menu">
+        {{ menu_footer(menuLinks, 99) }}
+    </div>
+    <div class="footer__number">
+        +987 9976 999
+    </div>
+    <div class="footer__soc">
+    {% set socnet = [
+        'twitter',
+        'facebook',
+        'g-plus',
+        'in',
+    ] %}
+        {% for item in socnet %}
+            <div class="soc-menu">
+                <a href="#" class="menu-item menu-item_{{ item }}" title="{{ item }}"></a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="footer__copyright">
+        All contents © copyright 2014 Business Theme. All rights reserved Designed by : akhilwebfolio
+    </div>
+</div>

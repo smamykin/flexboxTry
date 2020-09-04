@@ -2,6 +2,8 @@
 $fa-font-path: "../fonts";
 @import "~font-awesome/scss/font-awesome";
 
+@import "vars/font";
+@import "vars/color";
 @import 'fonts/lato';
 @import 'fonts/monserrat';
 @import 'fonts/gothamBlack';
@@ -13,7 +15,6 @@ $fa-font-path: "../fonts";
 @import "parts/card";
 @import "parts/steps";
 @import "parts/headers";
-@import "vars/_font";
 @mixin container() {
   width: 1180px;
   margin: 0 auto;
@@ -185,5 +186,124 @@ $fa-font-path: "../fonts";
     justify-content: space-between;
     flex-flow: row wrap;
     @include container;
+  }
+}
+
+.newsletter {
+  padding: 121px 0 0;
+  &__form {
+    padding-top: 13px;
+    text-align:center;
+  }
+}
+.address {
+  @include container;
+  width: 1110px;
+  background-image: url("../images/map.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 655px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__balloon {
+    position: relative;
+    top: -95px;
+    left: -4px;
+    display: block;
+    border-radius: 50%;
+    padding: 62px 70px 10px;
+    width: 140px;
+    height: 208px;
+    font-family: "Open Sans", sans-serif;
+    color: #aeb7ba;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: $bg-map_text;
+    text-align: center;
+    &::after {
+      box-sizing: border-box;
+      content: '';
+      border: 14px solid transparent;
+      border-top: 30px solid #394b50;
+      border-bottom: 0;
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-14px);
+    }
+    &::before {
+      content: '';
+      background-image: url("../images/logo-2.png");
+      background-size: contain;
+      width: 50px;
+      height: 48px;
+      position: absolute;
+      bottom:-65px;
+      left: 50%;
+      transform: translateX(-25px);
+    }
+  }
+  &__title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+  }
+  &__highlighted {
+    color: $bg-warn;
+    line-height: 24px;
+  }
+
+}
+
+.divider {
+  width: 1170px;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #e3e7ec;
+}
+.footer {
+
+  &__menu {
+    padding-top: 52px
+  }
+  &__number {
+    /* Style for "+987 9976" */
+    color: #394b50;
+    font-family: Lato, sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 24.15px;
+    text-align: center;
+    padding-top: 7px;
+
+    &::before {
+      @extend .fa;
+      content: $fa-var-phone;
+      width: 16px;
+      height: 17px;
+      color: #394b50;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+  &__soc {
+    display: flex;
+    justify-content: center;
+    padding-top:16px;
+  }
+  &__copyright {
+    margin-top: 50px;
+    background-color: $bg-attention;
+    text-align: center;
+    padding: 10px 0;
+    color: $color-opposite;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    line-height: 24px;
   }
 }

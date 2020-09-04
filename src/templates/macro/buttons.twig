@@ -4,6 +4,12 @@
     {% include 'templates/macro/_elements/base.button-link.twig' %}
 {% endmacro %}
 
+{% macro button_footer(value, link, isActive = true, classes = {}, title=null, attrs = '') %}
+    {% set classes = html_classes(classes, 'btn_footer-menu', {'active': isActive}) %}
+    {% include 'templates/macro/_elements/base.button-link.twig' %}
+{% endmacro %}
+
+
 {% macro button(value, opts) %}
     {% set opts = {
         type:'button',

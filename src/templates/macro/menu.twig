@@ -7,3 +7,12 @@
         {% endfor %}
     </div>
 {% endmacro %}
+
+{% macro menu_footer(items, activeIndex = 0) %}
+    {% from 'templates/macro/buttons.twig' import button_footer as button %}
+    <div class="menu menu_footer">
+        {% for item in items %}
+            {{ button(item.title, item.link, loop.index0 == activeIndex , 'menu-item') }}
+        {% endfor %}
+    </div>
+{% endmacro %}

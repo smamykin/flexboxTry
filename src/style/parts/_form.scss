@@ -1,16 +1,22 @@
 .form-group {
+  box-sizing: border-box;
   position: relative;
 
   font-family: Lato serif;
   color: $font-label;
+  min-width: 280px;
 
   &__control {
+    box-sizing: border-box;
     font-family: Lato serif;
-    min-width: 238px;
-    height: 42px;
+    width: 100%;
+    min-height: 46px;
     border: 1px solid #fff;
     border-radius: 4px;
     padding-left: 40px;
+    &_outlined {
+      border: 1px solid #cbcbcb;
+    }
   }
   &__label {
     font-size: $size-normal;
@@ -29,6 +35,17 @@
         margin-right: 10px;
         color: $font-label-icon;
       }
+    }
+  }
+  &_nesletter {
+    &_name {
+      width: 306px;
+    }
+    &_email {
+      width: 386px;
+    }
+    &_btn {
+
     }
   }
 }

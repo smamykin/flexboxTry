@@ -6,8 +6,10 @@
         type: 'text',
         id: random() ~ random() ~ date('U'),
         label: '',
+        outline: false,
+        classes: ''
     }|merge(opts) %}
-    <div class="form-group form-group_placeholder">
+    <div class="{{ html_classes('form-group form-group_placeholder', opts.classes) }}">
         <label for="{{ opts.id|e('html_attr') }}"
                class="{{ html_classes(
                    'form-group__label',
@@ -17,7 +19,9 @@
                        'form-group__label_icon_phone': opts.icon == 'phone',
                    }
                )}}">{{ icon }}<span class="form-group__label-placeholder">{{ opts.label }}</span></label>
-        <input class="form-group__control" name="{{ opts.name|e('html_attr') }}" id="{{ opts.id|e('html_attr') }}" type="{{ opts.text|e('html_attr') }}">
+        <input class="{{ html_classes('form-group__control', {
+            'form-group__control_outlined': opts.outline,
+        }) }} name="{{ opts.name|e('html_attr') }}" id="{{ opts.id|e('html_attr') }}" type="{{ opts.text|e('html_attr') }}">
     </div>
     {% endspaceless -%}
 {% endmacro %}

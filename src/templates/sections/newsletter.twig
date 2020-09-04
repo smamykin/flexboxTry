@@ -1,0 +1,48 @@
+{% from 'templates/macro/headers.twig' import header_h2 %}
+{% from 'templates/macro/form.twig' import inline_form %}
+{% from 'templates/macro/form-control.twig' import input %}
+{% from 'templates/macro/buttons.twig' import button %}
+
+<div class="newsletter">
+    <div class="newsletter__title">
+        {{ header_h2({
+            text: 'Newsletter',
+            subtext: 'Lorem Ipsum is simply dummy Business industry',
+        }) }}
+    </div>
+
+    <div class="newsletter__form">
+        {{ inline_form([
+            input({
+                icon: 'person',
+                placeholder: '',
+                label: 'Name',
+                outline:true,
+                classes: 'form-group_nesletter_name'
+            }),
+            input({
+                icon: 'email',
+                label: 'Email Address',
+                type: 'email',
+                outline:true,
+                classes: 'form-group_nesletter_email'
+            }),
+            button('Subscribe now', {
+                type:'submit',
+                classes: 'btn_subscribe'
+            }),
+        ]) }}
+    </div>
+
+    <div class="address">
+        <div class="address__balloon">
+            <div class="address__title">Address</div>
+            Business street,<br/>
+            Second north section<br/>
+            Bavani nagar. 88769<br/>
+            Call : +987-9976-999<br/>
+            <div class="address__highlighted">info@businessface.com</div>
+        </div>
+    </div>
+
+</div>
