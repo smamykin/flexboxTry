@@ -32,3 +32,27 @@ $fa-font-path:        "../fonts/webfonts";
     padding: 30px 0 29px;
   }
 }
+.carousel-container {
+  width: 647px;
+  height: 343px;
+  margin: 0 auto;
+
+}
+.owl-dots .owl-dot {
+  &.owl-dot_outline span {
+    margin: 10px 3px;
+
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 2px solid #dedfe0
+  }
+  &.owl-dot_lightblue.active span {
+    background-color: transparent;
+    border: 2px solid #1ca8dd
+  }
+  &.owl-dot_lightblue:hover span {
+    background-color: transparent;
+    border: 2px solid #1ca8dd
+  }
+}

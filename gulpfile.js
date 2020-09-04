@@ -2,7 +2,8 @@ const {src, dest, parallel, task, watch, series} = require('gulp'),
     browserSync = require('browser-sync').create(),//live reload
     rimraf = require('rimraf'),// clean up dist directory.
     twig = require('gulp-twig'),// template rendering.
-    webpack = require('webpack-stream'),//prepare js and css
+    webpack_stream = require('webpack-stream'),//prepare js and css
+    webpack = require('webpack'),//prepare js and css
     named = require('vinyl-named'),// It helps to save given names of the files for their using in the dist directory.
     spritesmith = require('gulp.spritesmith');
 /* !!!
@@ -130,8 +131,15 @@ task('templates:compile', function buildHTML() {
 task('app:compile', function () {
     return src(path.js.src)
         .pipe(named())
-        .pipe(webpack({
+        .pipe(webpack_stream({
             mode: 'development',
+            plugins: [
+                new webpack.ProvidePlugin({
+                    $: 'jquery',
+                    jQuery: 'jquery',
+                    'window.jQuery': 'jquery'
+                }),
+            ],
             module: {
                 rules: [
                     {
@@ -147,7 +155,6 @@ task('app:compile', function () {
                     },
                     {
                         test: /\.(scss|css)$/,
-                        exclude: /(node_modules|bower_components)/,
                         use: [
                             {loader: "style-loader"},
                             {loader: "css-loader"},

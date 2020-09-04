@@ -50,6 +50,15 @@
         text:'Our Services',
         subtext: 'Lorem Ipsum is simply dummy Business industry.',
     }) }}
+
+    <div class="carousel-container">
+        <div class="owl-carousel owl-theme">
+            {% for i in 1..3 %}
+                <img src="{{ path('@images/laptop_with_screen.png') }}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+
     {#    {% include 'templates/sections/look_at_me_first.twig' %}#}
 {#    {% include 'templates/sections/services.twig' %}#}
 {#    {% include 'templates/sections/about.twig' %}#}
